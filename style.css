@@ -1,0 +1,942 @@
+/* Basic reset */
+:after:before {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+
+/*-----------------------------------------------------------------------
+FARVER - hentes med: var(--navn)
+-----------------------------------------------------------------------*/
+:root {
+  --hvid: #F2F2F2;
+  --sort: #2E2E2E;
+  --bla: #073356;
+  --rod: #cb6257;
+}
+
+/* Rød udgangspunkt: #E74C3C */
+
+
+/*-----------------------------------------------------------------------
+BODY
+-----------------------------------------------------------------------*/
+body {
+  font-family: 'Open Sans', sans-serif;
+  height: 100%;
+  margin: 0 auto;
+  background-color: var(--bla);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+/*-----------------------------------------------------------------------
+--------------------------------- COVER ---------------------------------
+-----------------------------------------------------------------------*/
+#cover_body {
+  animation: fadeIn ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.cover_video {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+#expand_more {
+  color: var(--hvid);
+  font-size: 9rem;
+  font-weight: 1;
+  position: absolute;
+  bottom: 0;
+  left: 44.5%;
+  visibility: hidden;
+}
+
+#expand_more:hover {
+  cursor: pointer;
+}
+
+
+/*-----------------------------------------------------------------------
+---------------------------------- MENU ---------------------------------
+-----------------------------------------------------------------------*/
+
+#menu_body {
+  animation: fadeIn ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#menu {
+  height: 100vh;
+  background-image: url("../img/baggrund.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.menu_container {
+  position: relative;
+  width: 25%;
+  margin-top: 20%;
+  margin-bottom: 10%;
+  animation: slide ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+.menu_img {
+  opacity: 1;
+  width: 100%;
+  transition: .5s ease;
+  backface-visibility: hidden;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.middle {
+  transition: .5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
+.menu_container:hover .menu_img {
+  opacity: 0.6;
+}
+
+.menu_container:hover .middle {
+  opacity: 1;
+}
+
+.menu_text {
+  width: 90%;
+  color: var(--hvid);
+  font-size: 2.5rem;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-top: 90px;
+}
+
+#menu1 {
+  animation-delay: 0.3s;
+}
+
+#menu2 {
+  animation-delay: 0.6s;
+}
+
+#menu3 {
+  animation-delay: 0.9s;
+}
+
+
+/*-----------------------------------------------------------------------
+TILBAGE TIL MENU PIL
+-----------------------------------------------------------------------*/
+#keyboard_backspace {
+  color: var(--hvid);
+  font-size: 3.2rem;
+  opacity: 0.5;
+  position: absolute;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+
+#keyboard_backspace:hover {
+  opacity: 1;
+}
+
+
+/*-----------------------------------------------------------------------
+--------------------------------- VIDEO ---------------------------------
+-----------------------------------------------------------------------*/
+
+#video_body {
+  animation: fadeIn ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#video {
+  background-image: url("../img/baggrund.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+#anders_video {
+  width: 840px;
+  height: 472.5px;
+  margin-top: 9%;
+  position: absolute;
+  left: 300px;
+  border: none;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.7);
+}
+
+
+/*-----------------------------------------------------------------------
+------------------------------- SLIDESHOW -------------------------------
+-----------------------------------------------------------------------*/
+
+#slideshow_body {
+  animation: fadeIn ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#slideshow {
+  background-image: url("../img/baggrund.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+#slideshow_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 55px 100px;
+  height: 80vh;
+}
+
+#slideshow_img {
+  width: 800px;
+  padding-right: 50px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 20px;
+}
+
+#slideshow_txt {
+  width: 50vw;
+  font-size: 1.1rem;
+  color: var(--hvid);
+  line-height: 1.5;
+  padding-left: 50px;
+  padding-top: 12vh;
+}
+
+/*.slideshow_icon {
+  position: absolute;
+  margin-top: 49vh;
+  color: var(--hvid);
+  opacity: 0.2;
+}
+
+#chevron_left {
+  font-size: 3rem;
+  left: 0;
+  animation: bounce_left 1.5s infinite;
+}
+
+#chevron_right {
+  font-size: 3rem;
+  right: 0;
+  animation: bounce_right 1.5s infinite;
+}*/
+
+.dots {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  background-color: var(--hvid);
+  opacity: 0.2;
+  bottom: 30px;
+}
+
+#dot1 {
+  left: 660px;
+}
+
+#dot2 {
+  left: 680px;
+}
+
+#dot3 {
+  left: 700px;
+}
+
+#dot4 {
+  left: 720px;
+}
+
+#dot5 {
+  left: 740px;
+}
+
+#dot6 {
+  left: 760px;
+}
+
+
+/*-----------------------------------------------------------------------
+--------------------------- SLIDESHOW 1 TIL 6 ---------------------------
+-----------------------------------------------------------------------*/
+
+.slideshow {
+  background-image: url("../img/baggrund.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.active_dot {
+  opacity: 0.8;
+}
+
+.slide_img {
+  position: absolute;
+  width: 750px;
+}
+
+.slide_txt_div {
+  position: absolute;
+  width: 500px;
+  color: var(--hvid);
+  font-size: 1.3rem;
+}
+
+/*-----------------------------------------------------------------------
+SLIDE 1
+-----------------------------------------------------------------------*/
+
+#slide1_img {
+  top: 20px;
+  left: 60px;
+}
+
+#slide1_txt_div {
+  bottom: 70px;
+  right: 0px;
+}
+
+#txt1_afsnit1 {
+  animation: slide_left ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+}
+
+#txt1_afsnit2 {
+  animation: slide_left ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.6s;
+}
+
+
+/*-----------------------------------------------------------------------
+SLIDE 2
+-----------------------------------------------------------------------*/
+
+#slide2_img {
+  top: 60px;
+  left: 60px;
+}
+
+#slide2_txt_div {
+  bottom: 150px;
+  right: 20px;
+}
+
+#txt2_afsnit1 {
+  animation: slide_left ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+}
+
+#txt2_afsnit2 {
+  animation: slide_left ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.6s;
+}
+
+#txt2_afsnit3 {
+  animation: slide_left ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.9s;
+}
+
+
+/*-----------------------------------------------------------------------
+SLIDE 3
+-----------------------------------------------------------------------*/
+
+#slide3_img {
+  top: 30px;
+  right: 60px;
+}
+
+#slide3_txt_div {
+  bottom: 80px;
+  left: 00px;
+}
+
+#txt3_afsnit1 {
+  animation: slide_right ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+}
+
+#txt3_afsnit2 {
+  animation: slide_right ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.6s;
+}
+
+
+/*-----------------------------------------------------------------------
+SLIDE 4
+-----------------------------------------------------------------------*/
+
+#slide4_img {
+  top: 80px;
+  left: 60px;
+}
+
+#slide4_txt_div {
+  top: 65px;
+  right: 20px;
+}
+
+#txt4_afsnit1 {
+  animation: slide_left ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+}
+
+#txt4_afsnit2 {
+  animation: slide_left ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.6s;
+}
+
+#txt4_afsnit3 {
+  animation: slide_left ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.9s;
+}
+
+
+/*-----------------------------------------------------------------------
+SLIDE 5
+-----------------------------------------------------------------------*/
+
+#slide5_img {
+  top: 70px;
+  left: 60px;
+}
+
+#slide5_txt_div {
+  bottom: 110px;
+  right: 0px;
+}
+
+#txt5_afsnit1 {
+  animation: slide_left ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+}
+
+#txt5_afsnit2 {
+  animation: slide_left ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.6s;
+}
+
+#txt5_afsnit3 {
+  animation: slide_left ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.9s;
+}
+
+
+/*-----------------------------------------------------------------------
+SLIDE 6
+-----------------------------------------------------------------------*/
+
+#slide6_img {
+  bottom: 90px;
+  right: 60px;
+}
+
+#slide6_txt_div {
+  top: 120px;
+  left: 50px;
+}
+
+#txt6_afsnit1 {
+  animation: slide_right ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.3s;
+}
+
+#txt6_afsnit2 {
+  animation: slide_right ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.6s;
+}
+
+#txt6_afsnit3 {
+  animation: slide_right ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.9s;
+}
+
+
+/*-----------------------------------------------------------------------
+---------------------------------- KORT ---------------------------------
+-----------------------------------------------------------------------*/
+
+#kort_body {
+  animation: fadeIn ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+#kort_img {
+  width: 100vw;
+  bottom: 0;
+  position: fixed;
+}
+
+
+/*-----------------------------------------------------------------------
+GIFs
+-----------------------------------------------------------------------*/
+
+.gif_img {
+  width: 30%;
+  position: absolute;
+  top: 40px;
+  left: 130px;
+}
+
+.gif_img:hover {
+  cursor: pointer;
+}
+
+#gif1,
+#gif2,
+#gif3,
+#gif4,
+#gif5,
+#gif6,
+#gif7,
+#gif8,
+#gif9 {
+  visibility: hidden;
+}
+
+
+/*-----------------------------------------------------------------------
+Location on ikoner
+-----------------------------------------------------------------------*/
+
+.location_on {
+  color: var(--rod);
+  position: absolute;
+  transition: all .3s ease-in-out;
+  z-index: 1;
+}
+
+.location_on:hover {
+  cursor: pointer;
+  transform: scale(1.3);
+}
+
+#location1,
+#location2,
+#location3,
+#location4,
+#location5,
+#location6,
+#location7,
+#location8,
+#location9 {
+  font-size: 3.2rem;
+}
+
+#location1 {
+  bottom: 30px;
+  left: 357px;
+  color: var(--hvid);
+}
+
+#location2 {
+  bottom: 212px;
+  left: 395px;
+}
+
+#location3 {
+  bottom: 190px;
+  left: 470px;
+}
+
+#location4 {
+  bottom: 140px;
+  left: 600px;
+}
+
+#location5 {
+  bottom: 140px;
+  left: 740px;
+}
+
+#location6 {
+  bottom: 190px;
+  left: 883px;
+}
+
+#location7 {
+  bottom: 270px;
+  left: 1020px;
+}
+
+#location8 {
+  bottom: 379px;
+  left: 1152px;
+}
+
+#location9 {
+  bottom: 440px;
+  left: 1240px;
+  color: var(--hvid);
+  font-size: 3.6rem;
+}
+
+
+/*-----------------------------------------------------------------------
+Location tekst
+-----------------------------------------------------------------------*/
+
+.location_txt {
+  color: var(--hvid);
+  font-size: 1.2rem;
+  position: absolute;
+}
+
+#txt1 {
+  bottom: 17px;
+  left: 233px;
+}
+
+#txt2 {
+  bottom: 193px;
+  left: 335px;
+}
+
+#txt3 {
+  bottom: 222px;
+  left: 500px;
+}
+
+#txt4 {
+  bottom: 90px;
+  left: 583px;
+}
+
+#txt5 {
+  bottom: 174px;
+  left: 720px;
+}
+
+#txt6 {
+  bottom: 143px;
+  left: 905px;
+}
+
+#txt7 {
+  bottom: 224px;
+  left: 1040px;
+}
+
+#txt8 {
+  bottom: 362px;
+  left: 1055px;
+}
+
+#txt9 {
+  bottom: 480px;
+  left: 1250px;
+  color: var(--hvid);
+}
+
+
+
+/*-----------------------------------------------------------------------
+Lyd info tekst
+-----------------------------------------------------------------------*/
+
+#lyd_txt {
+  position: absolute;
+  color: var(--hvid);
+  font-size: 1rem;
+  font-style: italic;
+  top: 360px;
+  left: 130px;
+  opacity: 0.9;
+  visibility: hidden;
+}
+
+#hearing {
+  position: absolute;
+  color: var(--sort);
+  font-size: 2rem;
+  top: 324px;
+  left: 133px;
+  opacity: 0.7;
+  animation: size ease-in-out 3s infinite;
+}
+
+
+/*-----------------------------------------------------------------------
+Stiplede linjer
+-----------------------------------------------------------------------*/
+
+.linjer {
+  height: 0;
+  position: absolute;
+  border-top: 3px dashed rgb(120, 120, 120);
+  z-index: 0;
+}
+
+#linje1 {
+  width: 153px;
+  rotate: -76deg;
+  bottom: 137px;
+  left: 324px;
+  visibility: hidden;
+}
+
+#linje2 {
+  width: 78px;
+  rotate: 18deg;
+  bottom: 200px;
+  left: 420px;
+  visibility: hidden;
+}
+
+#linje3 {
+  width: 135px;
+  rotate: 20deg;
+  bottom: 163px;
+  left: 495px;
+  visibility: hidden;
+}
+
+#linje4 {
+  width: 136px;
+  bottom: 139px;
+  left: 629px;
+  visibility: hidden;
+}
+
+#linje5 {
+  width: 151px;
+  rotate: -20deg;
+  bottom: 164px;
+  left: 765px;
+  visibility: hidden;
+}
+
+#linje6 {
+  width: 155px;
+  rotate: -30deg;
+  bottom: 230px;
+  left: 905px;
+  visibility: hidden;
+}
+
+#linje7 {
+  width: 165px;
+  rotate: -40deg;
+  bottom: 325px;
+  left: 1035px;
+  visibility: hidden;
+}
+
+#linje8 {
+  width: 94px;
+  rotate: -43deg;
+  bottom: 414px;
+  left: 1171px;
+  visibility: hidden;
+}
+
+
+
+/*-----------------------------------------------------------------------
+------------------------------- KEYFRAMES -------------------------------
+-----------------------------------------------------------------------*/
+
+/* Fade ind (se js) */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Fade ud (se js) */
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Bounce/hop op og ned på y-aksen (se js) */
+/* Med scale() kan man "rykke" i det, der bouncer. scale(1, 1) er "normal", så fx scale(0.9, 1.1). Skrives:
+transform: scale (1, 1) translateY(0); */
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+
+  70% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Slide opad */
+@keyframes slide {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100px);
+  }
+}
+
+/* Slide venstre */
+@keyframes slide_left {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-60px);
+  }
+}
+
+/* Slide højre */
+@keyframes slide_right {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(60px);
+  }
+}
+
+/* Linjerne på kortet */
+@keyframes line_extend {
+  0% {
+    transform: scale(0);
+
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Location on bliver større og mindre */
+@keyframes size {
+  0% {
+    transform: scale(0.8);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(0.8);
+  }
+}
+
+/* Bounce frem og tilbage venstre 
+@keyframes bounce_left {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+} */
+
+
+/* Bounce frem og tilbage højre 
+@keyframes bounce_right {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+} */

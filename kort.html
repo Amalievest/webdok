@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title> WebDoc | Danmarks længeste uafbrudte svømmetur</title>
+
+    <!-- Link til ikoner -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+    <!-- Link til font Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/logo.png">
+</head>
+
+
+<body id="kort_body">
+
+    <!--------------------------------------------------------------
+    BAGGRUNDSLYD / VIND 
+    --------------------------------------------------------------->
+    <audio id="vind" autoplay loop>
+        <source src="lyd/vind.mp3" type="audio/mp3">
+    </audio>
+
+    <section id="kort">
+
+        <!--------------------------------------------------------------
+        BAGGRUNDSBILLEDE / KORT
+        --------------------------------------------------------------->
+        <img src="img/baggrund_kort.png"
+            alt="Tegnet kort med blåt hav og spidsen af Danmark og en lille del af Sverige" id="kort_img">
+
+
+        <!--------------------------------------------------------------
+        TILBAGE TIL MENU PIL
+        --------------------------------------------------------------->
+        <a href="menu.html">
+            <i class="material-icons keyboard_backspace" id="keyboard_backspace">keyboard_backspace</i>
+        </a>
+
+
+        <!--------------------------------------------------------------
+        GIFs
+        --------------------------------------------------------------->
+        <!-- gif 1 -->
+        <img src="img/gif1.GIF" alt="gif af solopgang" class="gif_img" id="gif1">
+
+        <!-- gif 2 -->
+        <img src="img/gif2.GIF" alt="gif af håndvægt og kyllingelår" class="gif_img" id="gif2">
+
+        <!-- gif 3 -->
+        <img src="img/gif3.GIF" alt="gif af fiskenet med mad i" class="gif_img" id="gif3">
+
+        <!-- gif 4 -->
+        <img src="img/gif4.GIF" alt="gif af en svømmer med tankemylder" class="gif_img" id="gif4">
+
+        <!-- gif 5 -->
+        <img src="img/gif5.GIF" alt="gif af tre brandmænd" class="gif_img" id="gif5">
+
+        <!-- gif 6 -->
+        <img src="img/gif6.GIF" alt="gif af skål med bulgursalat" class="gif_img" id="gif6">
+
+        <!-- gif 7 -->
+        <img src="img/gif7.GIF" alt="gif af kort over Danmark, Sverige og Norge" class="gif_img" id="gif7">
+
+        <!-- gif 8 -->
+        <img src="img/gif8.GIF" alt="gif af en svømmer" class="gif_img" id="gif8">
+
+        <!-- gif 9 -->
+        <img src="img/gif9.GIF" alt="gif af en svømmer, der svømmer mod et mål" class="gif_img" id="gif9">
+
+
+        <!--------------------------------------------------------------
+        LYD INFO TEKST
+        --------------------------------------------------------------->
+        <p id="lyd_txt">Hold musen over billedet</p>
+        <i class="material-icons" id="hearing">hearing</i>
+
+
+        <!--------------------------------------------------------------
+        LYD / ANDERS' STEMME
+        --------------------------------------------------------------->
+        <!-- Lyd 1 -->
+        <audio id="lyd1" preload="auto">
+            <source src="lyd/lyd1.mp3" type="audio/mp3">
+        </audio> 
+
+        <!-- Lyd 2 -->
+        <audio id="lyd2" preload="auto">
+            <source src="lyd/lyd2.mp3" type="audio/mp3">
+        </audio> 
+
+        <!-- Lyd 3 -->
+        <audio id="lyd3" preload="auto">
+            <source src="lyd/lyd3.mp3" type="audio/mp3">
+        </audio> 
+
+        <!-- Lyd 4 -->
+        <audio id="lyd4" preload="auto">
+            <source src="lyd/lyd4.mp3" type="audio/mp3">
+        </audio> 
+
+        <!-- Lyd 5 -->
+        <audio id="lyd5" preload="auto">
+            <source src="lyd/lyd5.mp3" type="audio/mp3">
+        </audio> 
+
+        <!-- Lyd 6 -->
+        <audio id="lyd6" preload="auto">
+            <source src="lyd/lyd6.mp3" type="audio/mp3">
+        </audio> 
+
+        <!-- Lyd 7 -->
+        <audio id="lyd7" preload="auto">
+            <source src="lyd/lyd7.mp3" type="audio/mp3">
+        </audio> 
+
+        <!-- Lyd 8 -->
+        <audio id="lyd8" preload="auto">
+            <source src="lyd/lyd8.mp3" type="audio/mp3">
+        </audio> 
+
+        <!-- Lyd 9 -->
+        <audio id="lyd9" preload="auto">
+            <source src="lyd/lyd9.mp3" type="audio/mp3">
+        </audio> 
+
+
+        <!--------------------------------------------------------------
+        LOKATION ON IKONER
+        --------------------------------------------------------------->
+        <!-- Lokation 1: Frederikshavn (hjem) -->
+        <i onclick="line0()" class="material-icons location_on" id="location1">home</i>
+
+        <!-- Lokation 2: Skagen (start) -->
+        <i onclick="line1()" class="material-icons location_on" id="location2">location_on</i>
+
+        <!-- Lokation 3: 3 km (1 t) -->
+        <i onclick="line2()" class="material-icons location_on" id="location3">location_on</i>
+
+        <!-- Lokation 4: 25 km (8 t) -->
+        <i onclick="line3()" class="material-icons location_on" id="location4">location_on</i>
+
+        <!-- Lokation 5: 37 km (12 t) -->
+        <i onclick="line4()" class="material-icons location_on" id="location5">location_on</i>
+
+        <!-- Lokation 6: 72 km (24 t) -->
+        <i onclick="line5()" class="material-icons location_on" id="location6">location_on</i>
+
+        <!-- Lokation 7: 90 km (30 t) -->
+        <i onclick="line6()" class="material-icons location_on" id="location7">location_on</i>
+
+        <!-- Lokation 8: 111 km (37 t) -->
+        <i onclick="line7()" class="material-icons location_on" id="location8">location_on</i>
+
+        <!-- Lokation 9: 116 km (38 t) Hunnebostrand, SE -->
+        <i onclick="line8()" class="material-icons location_on" id="location9">sports_score</i>
+
+
+        <!--------------------------------------------------------------
+        LOKATION TEKST
+        --------------------------------------------------------------->
+        <!-- Lokation 1: Frederikshavn (hjem) -->
+        <p class="location_txt" id="txt1">Frederikshavn</p>
+
+        <!-- Lokation 2: Skagen -->
+        <p class="location_txt" id="txt2">Skagen</p>
+
+        <!-- Lokation 3: 3 km (1 t) -->
+        <p class="location_txt" id="txt3">3 km, 1 t</p>
+
+        <!-- Lokation 4: 25 km (8 t) -->
+        <p class="location_txt" id="txt4">25 km, 8 t</p>
+
+        <!-- Lokation 5: 37 km (12 t) -->
+        <p class="location_txt" id="txt5">37 km, 12 t</p>
+
+        <!-- Lokation 6: 72 km (24 t) -->
+        <p class="location_txt" id="txt6">72 km, 24 t</p>
+
+        <!-- Lokation 7: 90 km (30 t) -->
+        <p class="location_txt" id="txt7">90 km, 30 t</p>
+
+        <!-- Lokation 8: 111 km (37 t) -->
+        <p class="location_txt" id="txt8">111 km, 37 t</p>
+
+        <!-- Lokation 9: 116 km (38 t) Hunnebostrand, SE -->
+        <p class="location_txt" id="txt9">116 km, 38 t <br> Hunnebostrand, SE</p>
+
+
+        <!--------------------------------------------------------------
+        STIPLEDE LINJER
+        --------------------------------------------------------------->
+        <!-- Linje 1 -->
+        <div class="linjer" id="linje1"></div>
+
+        <!-- Linje 2 -->
+        <div class="linjer" id="linje2"></div>
+
+        <!-- Linje 3 -->
+        <div class="linjer" id="linje3"></div>
+
+        <!-- Linje 4 -->
+        <div class="linjer" id="linje4"></div>
+
+        <!-- Linje 5 -->
+        <div class="linjer" id="linje5"></div>
+
+        <!-- Linje 6 -->
+        <div class="linjer" id="linje6"></div>
+
+        <!-- Linje 7 -->
+        <div class="linjer" id="linje7"></div>
+
+        <!-- Linje 8 -->
+        <div class="linjer" id="linje8"></div>
+
+    </section>
+
+
+    <!-- Javascript -->
+    <script src="js/kort.js"></script>
+
+</body>
+
+</html>
